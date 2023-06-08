@@ -21,7 +21,12 @@ class Article
     private ?string $content = null;
 
     #[ORM\Column]
-    private ?\DateTimeImmutable $createAt = null;
+    private ?\DateTimeImmutable $createAt;
+
+    public function __construct()
+    {
+        $this->createAt = new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
