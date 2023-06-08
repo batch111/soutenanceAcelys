@@ -23,6 +23,7 @@ class AppFixtures extends Fixture
             $article = new Article();
             $article->setTitle($this->faker->word());
             $article->setContent($this->faker->word());
+            $article->setCreateAt($this->faker->dateTime());
             $manager->persist($article);
         }
         $manager->flush();
